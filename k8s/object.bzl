@@ -145,6 +145,10 @@ def _common_impl(ctx):
     files += [cluster_file]
 
   
+  # If the 'context' parameter is not set by the caller,
+  #     this value becomes an empty string, and kubectl
+  #     will be run like `kubectl --context= ...` In this
+  #     case, kubectl uses the currently-selected context.
   context_arg = ctx.attr.context
   context_arg = ctx.expand_make_variables("context", context_arg, {})
   if "{" in ctx.attr.context:
