@@ -24,6 +24,7 @@ exports_files([
     "reverse.sh.tpl",
     "delete.sh.tpl",
     "describe.sh.tpl",
+    "diff.sh.tpl",
 ])
 
 load("@subpar//:subpar.bzl", "par_binary")
